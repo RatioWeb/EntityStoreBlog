@@ -1,0 +1,43 @@
+#!/bin/bash
+
+STANDARD="./phpcs.xml"
+EXTENSIONS="php,module,theme,inc,install,test,profile,js"
+BIN="./vendor/bin"
+
+echo
+echo "Drupal Coder pre-commit hook – commit with the --no-verify option to skip the hook"
+echo
+
+# Check whether PHP_CodeSniffer can be found
+if [ ! -f "$BIN/phpcs" ]
+then
+  echo "Drupal Coder not found – is it installed? 'composer require drupal/coder'"
+  echo
+  exit 1
+fi
+
+# Retrieve staged files
+FILES=$(git diff --cached --name-only --diff-filter=ACMR HEAD)
+
+# Run the sniffer
+echo "Running Drupal Coder."
+echo
+PHPCS=("$BIN/phpcs" "--standard=$STANDARD" "--extensions=$EXTENSIONS" "--ignore=*/*.css" "--filter=GitStaged" "--encoding=utf-8" "-p" ".")
+"${PHPCS[@]}"
+
+# Syntax Error
+if [ $? != 0 ]
+then
+  echo "Please fix each violations detected."
+  echo
+  exit 1
+fi
+
+# Syntax OK
+if [ $? == 0 ]
+then
+  echo "No violations detected"
+  echo
+  exit 0
+fi
+
