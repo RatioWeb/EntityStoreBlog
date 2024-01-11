@@ -16,6 +16,9 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entitystore_customer: 0
+  entitystore_partner: 0
+  entitystore_store: 0
   field: 0
   field_ui: 0
   file: 0

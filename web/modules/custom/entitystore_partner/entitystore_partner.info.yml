@@ -1,0 +1,5 @@
+name: 'EntityStore Partner'
+type: module
+description: 'Functionality related to store partners.'
+package: EntityStore
+core_version_requirement: ^10

@@ -1,0 +1,5 @@
+name: 'EntityStore Customer'
+type: module
+description: 'Functionality related to the customers of the stores.'
+package: EntityStore
+core_version_requirement: ^10
