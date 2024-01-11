@@ -1,0 +1,24 @@
+uuid: 1722af9e-c6df-4021-a1a6-fe0252c2fe73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.entitystore_store
+  module:
+    - text
+id: node.entitystore_store.body
+field_name: body
+entity_type: node
+bundle: entitystore_store
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

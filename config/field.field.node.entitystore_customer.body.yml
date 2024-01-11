@@ -1,0 +1,24 @@
+uuid: 96e1f3ea-65e5-4148-98ce-98a9d1e071b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.entitystore_customer
+  module:
+    - text
+id: node.entitystore_customer.body
+field_name: body
+entity_type: node
+bundle: entitystore_customer
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

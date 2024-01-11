@@ -1,0 +1,17 @@
+uuid: 4ab6ed9c-4a2c-4288-bc58-a959fbb5b275
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'EntityStore Customer'
+type: entitystore_customer
+description: 'A Customer'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

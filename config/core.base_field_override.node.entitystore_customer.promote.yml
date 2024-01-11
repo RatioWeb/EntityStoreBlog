@@ -1,0 +1,22 @@
+uuid: 843026fc-e580-46f3-bc0c-c9c2c9473a2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.entitystore_customer
+id: node.entitystore_customer.promote
+field_name: promote
+entity_type: node
+bundle: entitystore_customer
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

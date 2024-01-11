@@ -1,0 +1,28 @@
+uuid: f7974230-42f0-4e64-89e3-ea5919670128
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.entitystore_customer.body
+    - node.type.entitystore_customer
+  module:
+    - text
+    - user
+id: node.entitystore_customer.default
+targetEntityType: node
+bundle: entitystore_customer
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,17 @@
+uuid: 0caab20a-4d32-47d2-92bb-f01669d4090b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'EntityStore Store'
+type: entitystore_store
+description: 'A Store.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

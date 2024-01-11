@@ -1,0 +1,30 @@
+uuid: 2970830a-d075-49bc-9a64-3741006a5f02
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.entitystore_store.body
+    - node.type.entitystore_store
+  module:
+    - text
+    - user
+id: node.entitystore_store.teaser
+targetEntityType: node
+bundle: entitystore_store
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
