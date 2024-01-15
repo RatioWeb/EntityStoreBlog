@@ -1,0 +1,7 @@
+entitystore_store.entity_store_test:
+  path: '/entity_store_test'
+  defaults:
+    _title: 'Entity Store Test'
+    _controller: '\Drupal\entitystore_store\Controller\EntityStoreTestController'
+  requirements:
+    _permission: 'access content'

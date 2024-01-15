@@ -4,3 +4,13 @@
  * @file
  * Primary module hooks for EntityStore Customer module.
  */
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function entitystore_customer_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['entitystore_customer'])) {
+    // phpcs:ignore Drupal.Classes.FullyQualifiedNamespace.UseStatementMissing
+    $bundles['node']['entitystore_customer']['class'] = \Drupal\entitystore_customer\Entity\Node\EntityStoreCustomer::class;
+  }
+}

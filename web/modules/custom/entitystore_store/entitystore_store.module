@@ -4,3 +4,13 @@
  * @file
  * Primary module hooks for EntityStore Store module.
  */
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function entitystore_store_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['entitystore_store'])) {
+    // phpcs:ignore Drupal.Classes.FullyQualifiedNamespace.UseStatementMissing
+    $bundles['node']['entitystore_store']['class'] = \Drupal\entitystore_store\Entity\Node\EntityStoreStore::class;
+  }
+}

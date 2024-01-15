@@ -4,3 +4,13 @@
  * @file
  * Primary module hooks for EntityStore Partner module.
  */
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function entitystore_partner_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['entitystore_partner'])) {
+    // phpcs:ignore Drupal.Classes.FullyQualifiedNamespace.UseStatementMissing
+    $bundles['node']['entitystore_partner']['class'] = \Drupal\entitystore_partner\Entity\Node\EntityStorePartner::class;
+  }
+}
