@@ -64,7 +64,17 @@ final class EntityStoreTestController extends ControllerBase {
 
     $is_custom_bundle_classes = is_a($partner, EntityStorePartner::class) && is_a($customer, EntityStoreCustomer::class) && is_a($store, EntityStoreStore::class);
 
-    $result = $is_custom_bundle_classes ? $this->t('Test Passed') : $this->t('Test Failed');
+    $messages[] = $is_custom_bundle_classes ? $this->t('Success: Custom bundle Classes creation test OK</br>') : $this->t('Fail: Custom bundle Classes creation test FAILURE</br>');
+
+    $partner_duplicate = $partner->createDuplicate();
+    $partner_save_result = $partner->save();
+
+    $partner_duplicate_save_result = $partner_duplicate->save();
+    $messages[] = $partner_save_result && !$partner_duplicate_save_result ? $this->t('Success: Duplicate save protection OK</br>') : $this->t('Failure: Duplicate save protection FAILURE </br>');
+    $result = '';
+    foreach ($messages as $message) {
+      $result .= $message;
+    }
 
     $build['content'] = [
       '#type' => 'item',
